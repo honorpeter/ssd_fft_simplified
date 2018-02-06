@@ -26,7 +26,7 @@ glutBitmapCharacter vs glutStrokeCharacter:
 
 
 #include <stdio.h>
-#include <ssd_fft_gpu_common.h>
+#include "include/ssd_fft_gpu_common.h"
 
 // includes, GL
 #include <GL/glew.h>
@@ -37,10 +37,8 @@ glutBitmapCharacter vs glutStrokeCharacter:
 #include <helper_cuda_gl.h>
 #include <helper_functions.h>
 #include <helper_timer.h>
-
-
-
 #include <time.h>
+
 #define CUTFalse false
 #define CUTTrue true
 #define MAX_VIDEO_NUM 1000 //lets says we can have at most 1000 videos listed in videos.txt
@@ -52,9 +50,9 @@ const int giScnOffset = giScnBegY * giScnW;
 
 const int giScnMemSzUChar = giScnSz  * sizeof(unsigned char);
 #ifdef US_SIGNS
-char g_sPathBegin_GUI[50] = "../convert_pgm_to_RawVideo/raw/";
+char g_sPathBegin_GUI[50] = "US_raw/";
 #else
-char g_sPathBegin_GUI[60] = "../../../copied15May17/EU_raw(savedRealisFilesAsBin)/";
+char g_sPathBegin_GUI[60] = "EU_raw/";
 #endif
 char g_sPath_GUI[100];
 FILE *gfVideo;
@@ -67,7 +65,7 @@ bool gbSlow = false;
 bool gbRecog = true;
 bool gbClahe = false;
 #ifdef US_SIGNS
-char gcVideoListFile[] = "videos.txt";
+char gcVideoListFile[] = "videos-US.txt";
 #else
 char gcVideoListFile[] = "videos-EU.txt";
 #endif

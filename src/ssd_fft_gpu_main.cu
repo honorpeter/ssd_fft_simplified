@@ -5,18 +5,15 @@
 #include <string.h>
 #include <cublas.h>
 #include <cufft.h>
-//#include <cutil.h>
-#include "ssd_fft_gpu_kernel.cu"
-//#define BUILD_DLL
+#include "src/device/ssd_fft_gpu_kernel.cu"
 #include <GL/glew.h>
 #include <GL/glut.h>
-//#include "include/ssd_fft_gpu_dll.h"
-#include <ssd_fft_gpu_common.h>
-#include "include/ssd_fft_gpu.h"
 #include <helper_cuda.h>
 #include <helper_cuda_gl.h>
 #include <helper_functions.h>
 #include <helper_timer.h>
+#include "include/ssd_fft_gpu_common.h"
+#include "include/ssd_fft_gpu.h"
 
 #define CUTFalse false
 #define CUTTrue true
